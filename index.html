@@ -12,6 +12,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
    color: #009688; 
 }
 
+p {
+   text-indent:30px
+}
+
 body {
     font-family: sans-serif;
     background-color: #f7f7f7;
@@ -64,6 +68,101 @@ div.tab button.active {
  list-style-type: square;
  margin-left: -2em;
 }
+
+.chat {
+
+  border: solid 1px #EEE;
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.yours {
+  align-items: flex-start;
+
+}
+
+.yours .message {
+  margin-right: 25%;
+  background-color: #eee;
+  position: relative;
+}
+
+.yours .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: -7px;
+  height: 20px;
+  width: 20px;
+  background: #eee;
+  border-bottom-right-radius: 15px;
+}
+.yours .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: -10px;
+  width: 10px;
+  height: 20px;
+  background: white;
+  border-bottom-right-radius: 10px;
+}
+
+.mine {
+  align-items: flex-end;
+}
+
+.mine .message {
+  color: white;
+  margin-left: 25%;
+  background: #00d0bd;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.mine .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+  background: #00d0bd;
+  background-attachment: fixed;
+  border-bottom-left-radius: 15px;
+}
+
+.mine .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background: white;
+  border-bottom-left-radius: 10px;
+}
+
 
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -203,7 +302,81 @@ I have had the fortune to teach for the following institutions/departments, and 
 <div id="Research" class="content">
   <h3>Research</h3>
   <p>My research stretches across multiple disciplines, including linguistics, language pedagogy, anthropology, and critical gender studies.</p>
-<p> However, the common thread in my research is that it usually has something to do with modern Japanese popular culture, 
+<p> However, the common thread in my research is that it usually has something to do with modern Japanese popular culture. I believe that teaching and research should complement and work to inform each other, and that those who teach culture and language best are those that have experienced it first-hand. We know that Japanese language students are consuming anime and manga at a higher and higher rate, and that for many, this time they spend with these media dwarfs the amount of time they get to experience the language in class. I believe that having a teacher who is aware of these popular trends, and also analyzes them from an objective, empirical viewpoint can only better help the students contextualize the material.</p>
+
+
+
+<h1>My current strands of research are...</h1>
+<div class="chat">
+  <div class="yours messages">
+    <div class="message last">
+      Alternative masculinities and linguistic realities of Japanese male idols (アイドル）
+     </div>
+  </div>
+  <div class="mine messages">
+    <div class="message">
+      How are underground idols treated by their production company?
+    </div>
+    <div class="message">
+      How do the idols negotiate their own identities while being promoted?
+    </div>
+    <div class="message last">
+      How is non-verbal communication important to group cohesion among male idols?
+    </div>
+  </div>
+  <div class="yours messages">
+    <div class="message last">
+      Pronominal and sentence-final particle usage in Japanese BL [<i>yaoi</i>] <i>manga</i>
+     </div>
+  </div>
+  <div class="mine messages">
+    <div class="message">
+      How are authors differentiating the <i style="color:white">seme</i> and <i style="color:white">uke</i> characters linguistically?
+    </div>
+    <div class="message">
+      How does the language usage differ from that of <i style="color:white">shounen</i> and <i style="color:white">shoujo</i> <i style="color:white">manga</i>?
+    </div>
+    <div class="message last">
+      How is non-verbal communication important to group cohesion among male idols?
+    </div>
+  </div>
+
+  <div class="yours messages">
+    <div class="message last">
+      Pronunciation improvement and motivation among Japanese L2 students 
+     </div>
+  </div>
+  <div class="mine messages">
+    <div class="message">
+      Do Japanese L2 students' pronunciation improvements depend on the Japanese teacher's pronunciation?
+    </div>
+    <div class="message">
+      Does pronunciation improvement correlate with outside popular media consumption?
+    </div>
+    <div class="message last">
+      Do Japanese L1 and L2 teachers have the same impact on Japanese L1 pronunciation improvement?
+    </div>
+  </div>
+
+     </div>
+  </div>
+</div>
+My current strands of research are:
+<hgroup class="speech-bubble">
+
+	<p>This research is blah blah blah.<p>
+</hgroup>
+
+<br>
+<div>
+<hgroup class="speech-bubble" style="content: ''; position: absolute; right: 0; top: 50%; width: 0; height: 0; border: 20px solid transparent; border-left-color: #00aabb; border-right: 0; border-top: 0; margin-top: -10px; margin-right: -20px;">
+	<h4>Next research thing (アイドル）</h4>
+	<p>This research is blah blah blah.<p>
+::after
+</hgroup>
+</div>
+
+
 </div>
 
 <div id="CV" class="content">
