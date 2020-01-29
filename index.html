@@ -191,7 +191,8 @@ function openLang(e, lang) {
     document.getElementById(lang).style.opacity = "1";
     e.currentTarget.className += " active";
 }</script>
-<body class="w3-light-grey">
+<body class="w3-light-grey" onLoad="openLang(event,'Home')">
+>
 
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -209,17 +210,17 @@ function openLang(e, lang) {
           <br><br><br><br>
 <div class="w3-display-bottomleft w3-container w3-text-black">
             <h2>
-<ruby>
+<p style="text-indent:10px"><ruby>
 Ryan Redmond<rt>ライアン・レッドモンド</rt>
 </ruby>
 </h2>
           </div>
         </div> 
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Ph.D. Candidate in Linguistics</p>
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Associate Instructor in Japanese</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>University of California, Davis</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>rcredmond [at] ucdavis.edu</p>
+          <p style="text-indent:5px"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Ph.D. Candidate in Linguistics</p>
+          <p style="text-indent:5px"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Associate Instructor in Japanese</p>
+          <p style="text-indent:5px"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>University of California, Davis</p>
+          <p style="text-indent:5px"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>rcredmond [at] ucdavis.edu</p>
           <!--<p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i></p>--!>
           <hr>
 
@@ -357,29 +358,10 @@ I have had the fortune to teach for the following institutions/departments, and 
       Do Japanese L1 and L2 teachers have the same impact on Japanese L1 pronunciation improvement?
     </div>
   </div>
-
-     </div>
-  </div>
 </div>
-My current strands of research are:
-<hgroup class="speech-bubble">
-
-	<p>This research is blah blah blah.<p>
-</hgroup>
-
-<br>
-<div>
-<hgroup class="speech-bubble" style="content: ''; position: absolute; right: 0; top: 50%; width: 0; height: 0; border: 20px solid transparent; border-left-color: #00aabb; border-right: 0; border-top: 0; margin-top: -10px; margin-right: -20px;">
-	<h4>Next research thing (アイドル）</h4>
-	<p>This research is blah blah blah.<p>
-::after
-</hgroup>
 </div>
 
-
-</div>
-
-<div id="CV" class="content">
+<div id="CV" class="content" >
   <h3>CV</h3>
   <p>Link to my CV here.</p>
 </div>
