@@ -8,7 +8,80 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+th:hover {background-color: #d5f5f5;}
+* {
+   color: #245; 
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f7f7f7;
+}
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    border-radius: 4px 4px 0 0;
+}
+
+div.tab button {
+    background-color: #fff;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: default;
+    padding: 1em 1.2em;
+    font-size: 1em;
+    width: 25%;
+}
+
+div.tab button:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+
+div.tab button.active {
+    background-color: #ccc;
+    color: #fff;
+}
+
+.content {
+    display: none;
+    background-color: #fff;
+    padding: 0.5em 1em;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>$(function () {
+    $("#HTML").css("display", "block");
+    $("div.tab button:first-child" ).addClass(" active");
+    $(".content").click(function () {
+        $(this).animate({opacity: "0"}, 200);
+        var links = document.getElementsByClassName("links");
+        for (i = 0; i < links.length; i++) {
+        links[i].className = links[i].className.replace(" active", "");
+        }
+    });
+});
+
+function openLang(e, lang) {
+    var links = document.getElementsByClassName("links");
+    var content = document.getElementsByClassName("content");
+    for (i = 0; i < content.length; i++) {
+        content[i].style.display = "none";
+    }
+    for (i = 0; i < links.length; i++) {
+        links[i].className = links[i].className.replace(" active", "");
+    }
+    document.getElementById(lang).style.display = "block";
+    document.getElementById(lang).style.opacity = "1";
+    e.currentTarget.className += " active";
+}</script>
 <body class="w3-light-grey">
 
 <!-- Page Container -->
@@ -22,19 +95,20 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="/w3images/avatar_hat.jpg" style="width:100%" alt="Avatar">
+          <img src="https://linguistics.ucdavis.edu/people/rcred/image_normal" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Jane Doe</h2>
+            <h2>Ryan Redmond</h2>
           </div>
         </div>
         <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Designer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Ph.D. Candidate in Linguistics</p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Associate Instructor in Japanese</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>University of California, Davis</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>rcredmond [at] ucdavis.edu</p>
+          <!--<p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i></p>--!>
           <hr>
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+        <!--  <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
           <p>Adobe Photoshop</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
@@ -54,8 +128,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
           </div>
           <br>
-
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
+--!>
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Working Languages</b></p>
           <p>English</p>
           <div class="w3-light-grey w3-round-xlarge">
             <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
@@ -77,8 +151,35 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
     <!-- Right Column -->
     <div class="w3-twothird">
-    
       <div class="w3-container w3-card w3-white w3-margin-bottom">
+
+<div class="tab">
+  <button class="links" onclick="openLang(event,'HTML')">Home</button>
+  <button class="links" onclick="openLang(event,'CSS')">Teaching</button>
+  <button class="links" onclick="openLang(event,'JS')">Research</button>
+  <button class="links" onclick="openLang(event,'PHP')">CV / Contact</button>
+</div>
+
+<div id="HTML" class="content">
+  <h3>HyperText Markup Language</h3>
+  <p>HTML determines website content and structure.</p>
+</div>
+
+<div id="CSS" class="content">
+  <h3>Cascading Style Sheet</h3>
+  <p>CSS adds to the style and presentation of your website.</p> 
+</div>
+
+<div id="JS" class="content">
+  <h3>JavaScript</h3>
+  <p>JS is client-side script that adds functionality to your website.</p>
+</div>
+
+<div id="PHP" class="content">
+  <h3>Hypertext Preprocessor</h3>
+  <p>PHP is one of multiple backend languages, meaning it is for server-side scripting.</p>
+</div>
+<!--     
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
@@ -120,9 +221,9 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
       </div>
 
-    <!-- End Right Column -->
+End Right Column -->
     </div>
-    
+
   <!-- End Grid -->
   </div>
   
