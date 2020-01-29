@@ -8,9 +8,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-th:hover {background-color: #d5f5f5;}
 * {
-   color: #245; 
+   color: #009688; 
 }
 
 body {
@@ -23,6 +22,7 @@ div.tab {
     border: 1px solid #ccc;
     background-color: #eee;
     border-radius: 4px 4px 0 0;
+    border: none;
 }
 
 div.tab button {
@@ -33,7 +33,7 @@ div.tab button {
     cursor: default;
     padding: 1em 1.2em;
     font-size: 1em;
-    width: 25%;
+    width: 20%;
 }
 
 div.tab button:hover {
@@ -46,19 +46,21 @@ div.tab button.active {
     color: #fff;
 }
 
+.links {
+    color: #009688
+}
+    
 .content {
     display: none;
     background-color: #fff;
     padding: 0.5em 1em;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 4px 4px;
+    border: none;
 }
 
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>$(function () {
-    $("#HTML").css("display", "block");
+    $("#Home").css("display", "block");
     $("div.tab button:first-child" ).addClass(" active");
     $(".content").click(function () {
         $(this).animate({opacity: "0"}, 200);
@@ -95,7 +97,7 @@ function openLang(e, lang) {
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="https://linguistics.ucdavis.edu/people/rcred/image_normal" style="width:100%" alt="Avatar">
+          <img src="rcredmond.github.io/profile.png" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
             <h2>Ryan Redmond</h2>
           </div>
@@ -129,20 +131,7 @@ function openLang(e, lang) {
           </div>
           <br>
 --!>
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Working Languages</b></p>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-          </div>
-          <p>Spanish</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
-          </div>
-          <p>German</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-          </div>
-          <br>
+
         </div>
       </div><br>
 
@@ -153,81 +142,43 @@ function openLang(e, lang) {
     <div class="w3-twothird">
       <div class="w3-container w3-card w3-white w3-margin-bottom">
 
-<div class="tab">
-  <button class="links" onclick="openLang(event,'HTML')">Home</button>
-  <button class="links" onclick="openLang(event,'CSS')">Teaching</button>
-  <button class="links" onclick="openLang(event,'JS')">Research</button>
-  <button class="links" onclick="openLang(event,'PHP')">CV / Contact</button>
+<div class="tab"><b>
+  <button class="links" onclick="openLang(event,'Home')">Home</button>
+  <button class="links" onclick="openLang(event,'Teaching')">Teaching</button>
+  <button class="links" onclick="openLang(event,'Research')">Research</button>
+  <button class="links" onclick="openLang(event,'CV')">CV / Contact</button>
+  <button class="links" onclick="openLang(event,'Japanese')">日本語</button>
+</b>
 </div>
 
-<div id="HTML" class="content">
-  <h3>HyperText Markup Language</h3>
-  <p>HTML determines website content and structure.</p>
+<div id="Home" class="content">
+  <h3>Home</h3>
+  <p>Home</p>
 </div>
 
-<div id="CSS" class="content">
-  <h3>Cascading Style Sheet</h3>
-  <p>CSS adds to the style and presentation of your website.</p> 
+<div id="Teaching" class="content">
+  <h3>Teaching</h3>
+  <p>Teaching</p> 
 </div>
 
-<div id="JS" class="content">
-  <h3>JavaScript</h3>
-  <p>JS is client-side script that adds functionality to your website.</p>
+<div id="Research" class="content">
+  <h3>Research</h3>
+  <p>Research</p>
 </div>
 
-<div id="PHP" class="content">
-  <h3>Hypertext Preprocessor</h3>
-  <p>PHP is one of multiple backend languages, meaning it is for server-side scripting.</p>
+<div id="CV" class="content">
+  <h3>CV</h3>
+  <p>CV</p>
 </div>
-<!--     
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
-          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
-        </div>
-      </div>
 
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
-          <p>Web Development! All I need to know in one place</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>London Business School</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
-          <p>Master Degree</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>School of Coding</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
-          <p>Bachelor Degree</p><br>
-        </div>
-      </div>
+<div id="Japanese" class="content">
+  <h3>日本語</h3>
+  <p>日本語</p>
+</div>
 
-End Right Column -->
-    </div>
-
-  <!-- End Grid -->
-  </div>
-  
-  <!-- End Page Container -->
+</div> <!-- End Right Column -->
+</div> <!-- End Grid -->
+</div> <!-- End Page Container -->
 </div>
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">
