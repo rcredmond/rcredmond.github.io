@@ -172,65 +172,74 @@
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>$(function () {
-    $("#Home").css("display", "block");
-    $("div.tab button:first-child" ).addClass(" active");
-    $(".content").click(function () {
-        $(this).animate({opacity: "0"}, 200);
-        var links = document.getElementsByClassName("links");
-        for (i = 0; i < links.length; i++) {
-        links[i].className = links[i].className.replace(" active", "");
-        }
+<script>
+    $(function() {
+        $("#Home").css("display", "block");
+        $("div.tab button:first-child").addClass(" active");
+        $(".content").click(function() {
+            $(this).animate({
+                opacity: "0"
+            }, 200);
+            var links = document.getElementsByClassName("links");
+            for (i = 0; i < links.length; i++) {
+                links[i].className = links[i].className.replace(" active", "");
+            }
+        });
     });
-});
 
-function openLang(e, lang) {
-    var links = document.getElementsByClassName("links");
-    var content = document.getElementsByClassName("content");
-    for (i = 0; i < content.length; i++) {
-        content[i].style.display = "none";
+    function openLang(e, lang) {
+        var links = document.getElementsByClassName("links");
+        var content = document.getElementsByClassName("content");
+        for (i = 0; i < content.length; i++) {
+            content[i].style.display = "none";
+        }
+        for (i = 0; i < links.length; i++) {
+            links[i].className = links[i].className.replace(" active", "");
+        }
+        document.getElementById(lang).style.display = "block";
+        document.getElementById(lang).style.opacity = "1";
+        e.currentTarget.className += " active";
     }
-    for (i = 0; i < links.length; i++) {
-        links[i].className = links[i].className.replace(" active", "");
-    }
-    document.getElementById(lang).style.display = "block";
-    document.getElementById(lang).style.opacity = "1";
-    e.currentTarget.className += " active";
-}</script>
+</script>
+
 <body class="w3-light-grey" onLoad="openLang(event,'Home')">
 
- <div id="page-container">
- <div id="content-wrap">
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+    <div id="page-container">
+        <div id="content-wrap">
+            <!-- Page Container -->
+            <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-  <!-- The Grid -->
-  <div class="w3-row-padding">
-  
-    <!-- Left Column -->
-    <div class="w3-quarter">
-    
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-           <br>
-          <center><img src="http://rcredmond.github.io/profile.png" style="width:50%;" alt="Profile Image"></center>
-          <br><br><br><br><br>
-<div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>
+                <!-- The Grid -->
+                <div class="w3-row-padding">
+
+                    <!-- Left Column -->
+                    <div class="w3-quarter">
+
+                        <div class="w3-white w3-text-grey w3-card-4">
+                            <div class="w3-display-container">
+                                <br>
+                                <center><img src="http://rcredmond.github.io/profile.png" style="width:50%;" alt="Profile Image"></center>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="w3-display-bottomleft w3-container w3-text-black">
+                                    <h2>
 <p style="text-indent:10px;margin:25px"><ruby>
 Ryan Redmond<rt>ライアン・レッドモンド</rt>
 </ruby>
 </h2>
-          </div>
-        </div> 
-        <div class="w3-container">
-          <p style="text-indent:5px; margin:0px"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Ph.D. Candidate in Linguistics</p>
-          <p style="text-indent:5px"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Associate Instructor in Japanese</p>
-          <p style="text-indent:5px"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>University of California, Davis</p>
-          <p style="text-indent:5px"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>rcredmond [at] ucdavis.edu</p>
-          <!--<p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i></p>-->
-          <hr>
-        <!--  <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+                                </div>
+                            </div>
+                            <div class="w3-container">
+                                <p style="text-indent:5px; margin:0px"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Ph.D. Candidate in Linguistics</p>
+                                <p style="text-indent:5px"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Associate Instructor in Japanese</p>
+                                <p style="text-indent:5px"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>University of California, Davis</p>
+                                <p style="text-indent:5px"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>rcredmond [at] ucdavis.edu</p>
+                                <!--<p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i></p>-->
+                                <hr>
+                                <!--  <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
           <p>Adobe Photoshop</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
@@ -251,16 +260,17 @@ Ryan Redmond<rt>ライアン・レッドモンド</rt>
           </div>
           <br>
 -->
-        </div>
-      </div><br>
-    <!-- End Left Column -->
-    </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- End Left Column -->
+                    </div>
 
-    <!-- Right Column -->
-    <div class="w3-threequarter">
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <!-- Right Column -->
+                    <div class="w3-threequarter">
+                        <div class="w3-container w3-card w3-white w3-margin-bottom">
 
-<div class="tab"><b>
+                            <div class="tab"><b>
   <button class="links" onclick="openLang(event,'Home')">Home</button>
   <button class="links" onclick="openLang(event,'Teaching')">Teaching</button>
   <button class="links" onclick="openLang(event,'Research')">Research</button>
@@ -268,160 +278,158 @@ Ryan Redmond<rt>ライアン・レッドモンド</rt>
   <button class="links" onclick="openLang(event,'Personal')">Personal</button>
   <button class="links" onclick="openLang(event,'Japanese')">日本語</button>
 </b>
-</div>
+                            </div>
 
-<div id="Home" class="content">
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
-  <p class="p_wrap">Hello! I am a doctoral candidate specializing in Japanese sociolinguistics in the Department of Linguistics at the University of California, Davis. 
-     From 2018-2019, I was a JSPS Doctoral Fellow at Waseda University, finishing my dissertation fieldwork. My doctoral thesis is concerned with Japanese underground idol (地下アイドル), and the linguistic landscapes that surround their performances, contracts, and relationships. </p>            
-</div>
+                            <div id="Home" class="content">
+                                <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
+                                <p class="p_wrap">Hello! I am a doctoral candidate specializing in Japanese sociolinguistics in the Department of Linguistics at the University of California, Davis. From 2018-2019, I was a JSPS Doctoral Fellow at Waseda University, finishing my dissertation fieldwork. My doctoral thesis is concerned with Japanese underground idol (地下アイドル), and the linguistic landscapes that surround their performances, contracts, and relationships. </p>
+                            </div>
 
-<div id="Teaching" class="content">
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
-  <p class="p_wrap"> My teaching philosophy for language hinges on the notion that the ideal learning environment is one in which learners are empowered to make meaning in the target language in the classroom, which is a key feature of the Communicative Language Teaching (CLT) approach. However, whether teaching language, culture, or linguistics, I believe that a truly well-constructed lesson caters to the individualized needs of the students, and that these needs change at the macro level (year-to-year with new cohorts) as well as on the micro level (day-to-day within the same classroom). Lessons also need to be maintained as new research is published in our field daily. When developing a new lesson, the needs of my students are always my first priority, as individual variation is not just something we measure as social scientists, but it is something we see in the way that our students learn. I take this diversity very seriously as it has been integral to my life thus far, and continues to play an important role in how I shape myself as a person and educator.     
-<br>
-<p class="p_wrap">I have had the great fortune of teaching for the following institutions/departments, and the following coursework as an associate instructor or lecturer. Syllabi are available upon request.</p>
+                            <div id="Teaching" class="content">
+                                <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
+                                <p class="p_wrap"> My teaching philosophy for language hinges on the notion that the ideal learning environment is one in which learners are empowered to make meaning in the target language in the classroom, which is a key feature of the Communicative Language Teaching (CLT) approach. However, whether teaching language, culture, or linguistics, I believe that a truly well-constructed lesson caters to the individualized needs of the students, and that these needs change at the macro level (year-to-year with new cohorts) as well as on the micro level (day-to-day within the same classroom). Lessons also need to be maintained as new research is published in our field daily. When developing a new lesson, the needs of my students are always my first priority, as individual variation is not just something we measure as social scientists, but it is something we see in the way that our students learn. I take this diversity very seriously as it has been integral to my life thus far, and continues to play an important role in how I shape myself as a person and educator.
+                                    <br>
+                                    <p class="p_wrap">I have had the great fortune of teaching for the following institutions/departments, and the following coursework as an associate instructor or lecturer. Syllabi are available upon request.</p>
 
-<table class="TeachingExp">
-<tbody>
-<tr>
-<td><img src="http://rcredmond.github.io/ucd.png" alt="University of California Davis" style="width:125px;height:125px;float:right;"</td>
-<td>
-<ul>
-<li><h4>University of California Davis</h4></li>
-<li>JPN 001: Elementary Japanese I</li>
-<li>JPN 002: Elementary Japanese II</li>
-<li>LIN 001: Introduction to Linguistics</li>
-<li>LIN 098: Cross-cultural Miscommunication</li>
-<li>LIN 103a: Linguistic Analysis I</li>
-</ul>
-</td>
-</tr>
+                                    <table class="TeachingExp">
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="http://rcredmond.github.io/ucd.png" alt="University of California Davis" style="width:125px;height:125px;float:right;" </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>
+                                                                <h4>University of California Davis</h4></li>
+                                                            <li>JPN 001: Elementary Japanese I</li>
+                                                            <li>JPN 002: Elementary Japanese II</li>
+                                                            <li>LIN 001: Introduction to Linguistics</li>
+                                                            <li>LIN 098: Cross-cultural Miscommunication</li>
+                                                            <li>LIN 103a: Linguistic Analysis I</li>
+                                                        </ul>
+                                                    </td>
+                                            </tr>
 
-<tr>
-<td><img src="http://rcredmond.github.io/uofa.png" alt="University of Arizona" style="width:125px;height:125px;float:right;"></td>
-<td>
-<ul>
-<li><h4>University of Arizona</h4></li>
-<li>EAS 160: Languages & Cultures of East Asia</li>
-</ul>
-</td>
-</tr>
+                                            <tr>
+                                                <td><img src="http://rcredmond.github.io/uofa.png" alt="University of Arizona" style="width:125px;height:125px;float:right;"></td>
+                                                <td>
+                                                    <ul>
+                                                        <li>
+                                                            <h4>University of Arizona</h4></li>
+                                                        <li>EAS 160: Languages & Cultures of East Asia</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
 
-<tr>
-<td><img src="http://rcredmond.github.io/teikyo.png" alt="Teikyo University" style="width:125px;height:125px;float:right;"></td>
-<td>
-<ul>
-<br><br><br>
-<li style="list-style: none;"><h4>Teikyo University</h4></li>
-<li>JY2Q5: University Speaking & Listening</li>
-<li>UNI01: Elementary English Conversation</li>
-</ul>
-<br><br><br>
-</td>
-</tr>
+                                            <tr>
+                                                <td><img src="http://rcredmond.github.io/teikyo.png" alt="Teikyo University" style="width:125px;height:125px;float:right;"></td>
+                                                <td>
+                                                    <ul>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                        <li style="list-style: none;">
+                                                            <h4>Teikyo University</h4></li>
+                                                        <li>JY2Q5: University Speaking & Listening</li>
+                                                        <li>UNI01: Elementary English Conversation</li>
+                                                    </ul>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
 
-</tbody>
-</table>
+                            <div id="Research" class="content">
+                                <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
+                                <p style="padding-top:30px; padding-right:50px; padding-left:50px; line-height:1.65;">My research stretches across multiple disciplines, including linguistics, language pedagogy, anthropology, and critical gender studies. However, the common thread in my research is that it usually has something to do with modern Japanese popular culture. I believe that teaching and research should complement and work to inform each other, and that those who teach culture and language best are those that have experienced it first-hand. We know that Japanese language students are consuming anime and manga at a higher and higher rate, and that for many, this time they spend with these media dwarfs the amount of time they get to experience the language in class. I believe that having a teacher who is aware of these popular trends, and also analyzes them from an objective, empirical viewpoint can only better help the students contextualize the material. You can view my past publications and selected presentations at my <a href src="https://ucdavis.academia.edu/RyanRedmond">Academia.edu</a> page.
+                                    <p>
 
-</div>
+                                        <h2>My current strands of research are...</h2>
+                                        <div class="chat">
+                                            <div class="yours messages">
+                                                <div class="message last">
+                                                    Alternative masculinities and linguistic realities of Japanese male idols (アイドル）
+                                                </div>
+                                            </div>
+                                            <div class="mine messages">
+                                                <div class="message">
+                                                    How are underground idols treated by their production company?
+                                                </div>
+                                                <div class="message">
+                                                    How do the idols negotiate their own identities while being promoted?
+                                                </div>
+                                                <div class="message last">
+                                                    How is non-verbal communication important to group cohesion among male idols?
+                                                </div>
+                                            </div>
+                                            <div class="yours messages">
+                                                <div class="message last">
+                                                    Pronominal and sentence-final particle usage in Japanese BL [<i>yaoi</i>] <i>manga</i>
+                                                </div>
+                                            </div>
+                                            <div class="mine messages">
+                                                <div class="message">
+                                                    How are authors differentiating the <i style="color:white">seme</i> and <i style="color:white">uke</i> characters linguistically?
+                                                </div>
+                                                <div class="message">
+                                                    How does the language usage differ from that of <i style="color:white">shounen</i> and <i style="color:white">shoujo</i> <i style="color:white">manga</i>?
+                                                </div>
+                                                <div class="message last">
+                                                    How is non-verbal communication important to group cohesion among male idols?
+                                                </div>
+                                            </div>
 
-<div id="Research" class="content">
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
-  <p style="padding-top:30px; padding-right:50px; padding-left:50px; line-height:1.65;">My research stretches across multiple disciplines, including linguistics, language pedagogy, anthropology, and critical gender studies. However, the common thread in my research is that it usually has something to do with modern Japanese popular culture. I believe that teaching and research should complement and work to inform each other, and that those who teach culture and language best are those that have experienced it first-hand. We know that Japanese language students are consuming anime and manga at a higher and higher rate, and that for many, this time they spend with these media dwarfs the amount of time they get to experience the language in class. I believe that having a teacher who is aware of these popular trends, and also analyzes them from an objective, empirical viewpoint can only better help the students contextualize the material. You can view my past publications and selected presentations at my <a href src="https://ucdavis.academia.edu/RyanRedmond">Academia.edu</a> page.<p>
+                                            <div class="yours messages">
+                                                <div class="message last">
+                                                    Pronunciation improvement and motivation among Japanese L2 students
+                                                </div>
+                                            </div>
+                                            <div class="mine messages">
+                                                <div class="message">
+                                                    Do Japanese L2 students' pronunciation improvements depend on the Japanese teacher's pronunciation?
+                                                </div>
+                                                <div class="message">
+                                                    Does pronunciation improvement correlate with outside popular media consumption?
+                                                </div>
+                                                <div class="message last">
+                                                    Do Japanese L1 and L2 teachers have the same impact on Japanese L1 pronunciation improvement?
+                                                </div>
+                                            </div>
+                                            <div class="yours messages">
+                                                <div class="message last" style="padding-right:0px">
+                                                    <img src="http://rcredmond.github.io/thought_bubbles.gif" style="width:40%; text-align:center;" alt="ellipses">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                            </div>
 
+                            <div id="CV" class="content">
+                                <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
+                                <p class="p_wrap">Link to my CV here.</p>
+                            </div>
 
-<h2>My current strands of research are...</h2>
-<div class="chat">
-  <div class="yours messages">
-    <div class="message last">
-      Alternative masculinities and linguistic realities of Japanese male idols (アイドル）
-     </div>
-  </div>
-  <div class="mine messages">
-    <div class="message">
-      How are underground idols treated by their production company?
-    </div>
-    <div class="message">
-      How do the idols negotiate their own identities while being promoted?
-    </div>
-    <div class="message last">
-      How is non-verbal communication important to group cohesion among male idols?
-    </div>
-  </div>
-  <div class="yours messages">
-    <div class="message last">
-      Pronominal and sentence-final particle usage in Japanese BL [<i>yaoi</i>] <i>manga</i>
-     </div>
-  </div>
-  <div class="mine messages">
-    <div class="message">
-      How are authors differentiating the <i style="color:white">seme</i> and <i style="color:white">uke</i> characters linguistically?
-    </div>
-    <div class="message">
-      How does the language usage differ from that of <i style="color:white">shounen</i> and <i style="color:white">shoujo</i> <i style="color:white">manga</i>?
-    </div>
-    <div class="message last">
-      How is non-verbal communication important to group cohesion among male idols?
-    </div>
-  </div>
+                            <div id="Japanese" class="content">
+                                <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
+                                <p class="p_wrap">ライアン・レッドモンドと申します。CV等を日本語でも提供できます。</p>
+                            </div>
 
-  <div class="yours messages">
-    <div class="message last">
-      Pronunciation improvement and motivation among Japanese L2 students 
-     </div>
-  </div>
-  <div class="mine messages">
-    <div class="message">
-      Do Japanese L2 students' pronunciation improvements depend on the Japanese teacher's pronunciation?
-    </div>
-    <div class="message">
-      Does pronunciation improvement correlate with outside popular media consumption?
-    </div>
-    <div class="message last">
-      Do Japanese L1 and L2 teachers have the same impact on Japanese L1 pronunciation improvement?
-    </div>
-  </div>
-  <div class="yours messages">
-    <div class="message last" style="padding-right:0px">
-      <img src="http://rcredmond.github.io/thought_bubbles.gif" style="width:40%; text-align:center;" alt="ellipses">
-     </div>
-  </div>
-</div>
-<br>
-</div>
+                            <div id="Personal" class="content">
+                                <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
+                                <p class="p_wrap">I am an unabashed fan of the media that I research. I think one would be hard-pressed to find a Japanese-speaking 20-something American these days who didn't get their curiosity started with Saturday-morning Pokémon, or late-night viewings of Inuyasha. However, I am also not blind to the problematic nature of many of these media. BL (a term itself problematic enough) has evolved since the days of the <i>yaoi ronsо̄</i>, but it still has a long way to go, and the idol industry that I spent a year working for is exploitative and heterosexist. Despite these shortcomings, I am still inclined to view myself as an aca-fan (to borrow the term popularized by Matt Hills and Henry Jenkins).</p>
 
-<div id="CV" class="content" >
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
-  <p class="p_wrap">Link to my CV here.</p>       
-</div>
-
-<div id="Japanese" class="content">
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
-  <p class="p_wrap">ライアン・レッドモンドと申します。CV等を日本語でも提供できます。</p>
-               
-</div>
-
-<div id="Personal" class="content">
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
-  <p class="p_wrap">I am an unabashed fan of the media that I research. I think one would be hard-pressed to find a Japanese-speaking 20-something American these days who didn't get their curiosity started with Saturday-morning Pokémon, or late-night viewings of Inuyasha. However, I am also not blind to the 
-problematic nature of many of these media. BL (a term itself problematic enough) has evolved since the days of the <i>yaoi ronsо̄</i>, but it still has a long way to go, and the idol industry that I spent a year working for is exploitative and heterosexist. Despite these shortcomings, I am still inclined to view myself
-as an aca-fan (to borrow the term popularized by Matt Hills and Henry Jenkins).</p>
-
-  <p class="p_wrap">When I'm not writing, presenting, or teaching, I am probably working on <i>cosplay</i>, singing opera, or offering my services as a translator at <i>anime</i> conventions.</p>
-     
-</div>
-
-
-</div> <!-- End Right Column -->
-</div> <!-- End Grid -->
-</div> <!-- End Page Container -->
-</div>
-</div>
-
-<footer class="w3-container w3-teal w3-center w3-margin-top" id="footer">
-
-</footer>
-
+                                <p class="p_wrap">When I'm not writing, presenting, or teaching, I am probably working on <i>cosplay</i>, singing opera, or offering my services as a translator at <i>anime</i> conventions.</p>
+                            </div>
+                        </div>
+                        <!-- End Right Column -->
+                    </div>
+                    <!-- End Grid -->
+                </div>
+                <!-- End Page Container -->
+            </div>
+        </div>
+        <footer class="w3-container w3-teal w3-center w3-margin-top" id="footer">
+        </footer>
 </body>
 </html>
