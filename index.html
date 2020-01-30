@@ -7,13 +7,17 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
 * {
    color: #009688; 
 }
 
 p {
-   text-indent:30px
+   text-indent:30px;
+}
+
+li {
+   font-weight:bold;
 }
 
 body {
@@ -37,7 +41,7 @@ div.tab button {
     cursor: default;
     padding: 1em 1.2em;
     font-size: 1em;
-    width: 20%;
+    width: 16.66%;
 }
 
 div.tab button:hover {
@@ -59,14 +63,6 @@ div.tab button.active {
     background-color: #fff;
     padding: 0.5em 1em;
     border: none;
-}
-
-.roman {
- list-style-type: lower-roman;
-}
-.square {
- list-style-type: square;
- margin-left: -2em;
 }
 
 .chat {
@@ -178,7 +174,20 @@ div.tab button.active {
   width: 100%;
   height: 5.5rem;            /* Footer height */
 }
-   
+
+.column {
+  float: left;
+  width: 40%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+    }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>$(function () {
@@ -207,7 +216,7 @@ function openLang(e, lang) {
     e.currentTarget.className += " active";
 }</script>
 <body class="w3-light-grey" onLoad="openLang(event,'Home')">
->
+
  <div id="page-container">
  <div id="content-wrap">
 <!-- Page Container -->
@@ -217,12 +226,12 @@ function openLang(e, lang) {
   <div class="w3-row-padding">
   
     <!-- Left Column -->
-    <div class="w3-third">
+    <div class="w3-quarter">
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
            <br>
-          <center><img src="http://rcredmond.github.io/profile.png" style="width:50%; alt="Avatar"></center>
+          <center><img src="http://rcredmond.github.io/profile.png" style="width:50%;" alt="Profile Image"></center>
           <br><br><br><br><br>
 <div class="w3-display-bottomleft w3-container w3-text-black">
             <h2>
@@ -237,9 +246,8 @@ Ryan Redmond<rt>ライアン・レッドモンド</rt>
           <p style="text-indent:5px"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Associate Instructor in Japanese</p>
           <p style="text-indent:5px"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>University of California, Davis</p>
           <p style="text-indent:5px"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>rcredmond [at] ucdavis.edu</p>
-          <!--<p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i></p>--!>
+          <!--<p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i></p>-->
           <hr>
-
         <!--  <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
           <p>Adobe Photoshop</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
@@ -260,16 +268,14 @@ Ryan Redmond<rt>ライアン・レッドモンド</rt>
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
           </div>
           <br>
---!>
-
+-->
         </div>
       </div><br>
-
     <!-- End Left Column -->
     </div>
 
     <!-- Right Column -->
-    <div class="w3-twothird">
+    <div class="w3-threequarter">
       <div class="w3-container w3-card w3-white w3-margin-bottom">
 
 <div class="tab"><b>
@@ -277,49 +283,60 @@ Ryan Redmond<rt>ライアン・レッドモンド</rt>
   <button class="links" onclick="openLang(event,'Teaching')">Teaching</button>
   <button class="links" onclick="openLang(event,'Research')">Research</button>
   <button class="links" onclick="openLang(event,'CV')">CV / Contact</button>
+  <button class="links" onclick="openLang(event,'Personal')">Personal</button>
   <button class="links" onclick="openLang(event,'Japanese')">日本語</button>
 </b>
 </div>
 
 <div id="Home" class="content">
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" width="50%"></p>
+  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
   <p>Welcome home!</p>
   <p>Filler text Filler text Filler text Filler text Filler text Filler text Filler text 
              Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text </p>            
 </div>
 
 <div id="Teaching" class="content">
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" width="50%"></p>
+  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
   <p> My teaching philosophy for language hinges on the notion that the ideal learning environment is one in which learners are empowered to make meaning in the target language in the classroom, which is a key feature of the Communicative Language Teaching (CLT) approach. However, whether teaching language, culture, or linguistics, I believe that a truly well-constructed lesson caters to the individualized needs of the students, and that these needs change at the macro level (year-to-year with new cohorts) as well as on the micro level (day-to-day within the same classroom). Lessons also need to be maintained as new research is published in our field daily. When developing a new lesson, the needs of my students are always my first priority, as individual variation is not just something we measure as social scientists, but it is something we see in the way that our students learn. I take this diversity very seriously as it has been integral to my life thus far, and continues to play an important role in how I shape myself as a person and educator.     
 <br>
-I have had the fortune to teach for the following institutions/departments, and the following coursework as an associate instructor/lecturer:
+<p>I have had the great fortune of teaching for the following institutions/departments, and the following coursework as an associate instructor or lecturer:</p>
+
+<div class="row">
+<div class="column">
+<div class="row" style="text-indent:30px;margin:25px"><img src="http://rcredmond.github.io/ucd.png" alt="University of California Davis" style="width:125px;height:125px;float:right;"><br><br></div>
+<div class="row" style="text-indent:30px;margin:25px"><img src="http://rcredmond.github.io/uofa.png" alt="University of Arizona" style="width:125px;height:125px;float:right;"><br><br></div>
+<div class="row" style="text-indent:30px;margin:25px"><img src="http://rcredmond.github.io/teikyo.png" alt="Teikyo University" style="width:125px;height:125px;float:right;"><br><br></div>
+</div>
+
+<div class="column">
+<div class="row">
 <ul>
-<li>University of California Davis</li>
-<ul class="square">
+<li style="list-style: none;"><h4>University of California Davis</h4></li>
 <li>JPN 001: Elementary Japanese I</li>
 <li>JPN 002: Elementary Japanese II</li>
 <li>LIN 001: Introduction to Linguistics</li>
 <li>LIN 098: Cross-cultural Miscommunication</li>
 <li>LIN 103a: Linguistic Analysis I</li>
-</ul></ul>
-
-<ul>
-<li>University of Arizona</li>
-<ul class="square">
-<li>EAS 160: Languages & Cultures of East Asia</li>
-</ul></ul>
-<ul>
-<li>Teikyo University</li>
-<ul class="square">
-<li>JY2Q5: University Speaking & Listening</li>
-<li>UNI01: Elementary English Conversation</li>
 </ul>
-
-</p> 
 </div>
 
+<div class="row">
+<ul>
+<li style="list-style: none;"><h4>University of Arizona</h4></li>
+<li>EAS 160: Languages & Cultures of East Asia</li>
+</ul>
+</div>
+
+<div class="row"><br><br>
+<ul>
+<li style="list-style: none;"><h4>Teikyo University</h4></li>
+<li>JY2Q5: University Speaking & Listening</li>
+<li>UNI01: Elementary English Conversation</li>
+</ul></div></div>
+</div>
+</div>
 <div id="Research" class="content">
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" width="50%"></p>
+  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
   <p style="padding-top:30px">My research stretches across multiple disciplines, including linguistics, language pedagogy, anthropology, and critical gender studies. However, the common thread in my research is that it usually has something to do with modern Japanese popular culture. I believe that teaching and research should complement and work to inform each other, and that those who teach culture and language best are those that have experienced it first-hand. We know that Japanese language students are consuming anime and manga at a higher and higher rate, and that for many, this time they spend with these media dwarfs the amount of time they get to experience the language in class. I believe that having a teacher who is aware of these popular trends, and also analyzes them from an objective, empirical viewpoint can only better help the students contextualize the material.</p>
 
 
@@ -377,7 +394,7 @@ I have had the fortune to teach for the following institutions/departments, and 
   </div>
   <div class="yours messages">
     <div class="message last" style="padding-right:0px">
-      <img src="http://rcredmond.github.io/thought_bubbles.gif" style="width:40%; text-align:center;">
+      <img src="http://rcredmond.github.io/thought_bubbles.gif" style="width:40%; text-align:center;" alt="ellipses">
      </div>
   </div>
 </div>
@@ -385,18 +402,26 @@ I have had the fortune to teach for the following institutions/departments, and 
 </div>
 
 <div id="CV" class="content" >
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" width="50%"></p>
+  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
   <p>Link to my CV here.</p>
 <p>Filler text Filler text Filler text Filler text Filler text Filler text Filler text 
              Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text </p>       
 </div>
 
 <div id="Japanese" class="content">
-  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" width="50%"></p>
+  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
   <p>ライアン・レッドモンドと申します。CV等を日本語でも提供できます。</p>
                <p>Filler text Filler text Filler text Filler text Filler text Filler text Filler text 
              Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text </p>       
 </div>
+
+<div id="Personal" class="content">
+  <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
+  <p>Personal</p>
+               <p>Filler text Filler text Filler text Filler text Filler text Filler text Filler text 
+             Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text Filler text </p>       
+</div>
+
 
 </div> <!-- End Right Column -->
 </div> <!-- End Grid -->
