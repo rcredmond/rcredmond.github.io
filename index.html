@@ -4,198 +4,173 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-
-* {
-   color: #009688; 
+ * {
+     color: #009688;
 }
-
-p {
-   text-indent:30px;
+ p {
+     text-indent:30px;
 }
-
-.p_wrap {
-   text-indent:30px;
-   padding-right:50px; padding-left:50px; padding-top:30px; line-height:1.65;
+ .p_wrap {
+     text-indent:30px;
+     padding-right:50px;
+     padding-left:50px;
+     padding-top:30px;
+     line-height:1.65;
 }
-
-ul {
-   font-weight:bold;
+ ul {
+     font-weight:bold;
 }
-
-li {
-   font-weight:bold;
-   list-style-position:inside;
-   margin-left:30px;
-   list-style: none;
+ li {
+     font-weight:bold;
+     list-style-position:inside;
+     margin-left:30px;
+     list-style: none;
 }
-
-body {
-    font-family: sans-serif;
-    background-color: #f7f7f7;
+ body {
+     font-family: sans-serif;
+     background-color: #f7f7f7;
 }
-
-div.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #eee;
-    border-radius: 4px 4px 0 0;
-    border: none;
+ div.tab {
+     overflow: hidden;
+     border: 1px solid #ccc;
+     background-color: #eee;
+     border-radius: 4px 4px 0 0;
+     border: none;
 }
-
-div.tab button {
-    background-color: #fff;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: default;
-    padding: 1em 1.2em;
-    font-size: 1em;
-    width: 16.66%;
+ div.tab button {
+     background-color: #fff;
+     float: left;
+     border: none;
+     outline: none;
+     cursor: default;
+     padding: 1em 1.2em;
+     font-size: 1em;
+     width: 16.66%;
 }
-
-div.tab button:hover {
-    background-color: #009688;
-    color: #fff;
+ div.tab button:hover {
+     background-color: #009688;
+     color: #fff;
 }
-
-div.tab button.active {
-    background-color: #009688;
-    color: #fff;
+ div.tab button.active {
+     background-color: #009688;
+     color: #fff;
 }
-
-.links {
-    color: #009688
+ .links {
+     color: #009688 
 }
-<!-- for lists -->    
-.content {
-    display: none;
-    background-color: #fff;
-    padding: 0.5em 1em;
-    border: none;
+ <!-- for lists --> .content {
+     display: none;
+     background-color: #fff;
+     padding: 0.5em 1em;
+     border: none;
 }
-
-.chat {
-
-  border: solid 1px #EEE;
-  display: flex;
-  flex-direction: column;
-  padding-right: 30px;
-  padding-left: 30px;
+ .chat {
+     border: solid 1px #EEE;
+     display: flex;
+     flex-direction: column;
+     padding-right: 30px;
+     padding-left: 30px;
 }
-
-.messages {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
+ .messages {
+     margin-top: 30px;
+     display: flex;
+     flex-direction: column;
 }
-
-.message {
-  border-radius: 20px;
-  padding: 8px 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  display: inline-block;
+ .message {
+     border-radius: 20px;
+     padding: 8px 15px;
+     margin-top: 5px;
+     margin-bottom: 5px;
+     display: inline-block;
 }
-
-.yours {
-  align-items: flex-start;
-
+ .yours {
+     align-items: flex-start;
 }
-
-.yours .message {
-  margin-right: 25%;
-  background-color: #eee;
-  position: relative;
+ .yours .message {
+     margin-right: 25%;
+     background-color: #eee;
+     position: relative;
 }
-
-.yours .message.last:before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  bottom: 0;
-  left: -7px;
-  height: 20px;
-  width: 20px;
-  background: #eee;
-  border-bottom-right-radius: 15px;
+ .yours .message.last:before {
+     content: "";
+     position: absolute;
+     z-index: 0;
+     bottom: 0;
+     left: -7px;
+     height: 20px;
+     width: 20px;
+     background: #eee;
+     border-bottom-right-radius: 15px;
 }
-.yours .message.last:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: -10px;
-  width: 10px;
-  height: 20px;
-  background: white;
-  border-bottom-right-radius: 10px;
+ .yours .message.last:after {
+     content: "";
+     position: absolute;
+     z-index: 1;
+     bottom: 0;
+     left: -10px;
+     width: 10px;
+     height: 20px;
+     background: white;
+     border-bottom-right-radius: 10px;
 }
-
-.mine {
-  align-items: flex-end;
+ .mine {
+     align-items: flex-end;
 }
-
-.mine .message {
-  color: white;
-  margin-left: 25%;
-  background: #00d0bd;
-  background-attachment: fixed;
-  position: relative;
+ .mine .message {
+     color: white;
+     margin-left: 25%;
+     background: #00d0bd;
+     background-attachment: fixed;
+     position: relative;
 }
-
-.mine .message.last:before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  bottom: 0;
-  right: -8px;
-  height: 20px;
-  width: 20px;
-  background: #00d0bd;
-  background-attachment: fixed;
-  border-bottom-left-radius: 15px;
+ .mine .message.last:before {
+     content: "";
+     position: absolute;
+     z-index: 0;
+     bottom: 0;
+     right: -8px;
+     height: 20px;
+     width: 20px;
+     background: #00d0bd;
+     background-attachment: fixed;
+     border-bottom-left-radius: 15px;
 }
-
-.mine .message.last:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  right: -10px;
-  width: 10px;
-  height: 20px;
-  background: white;
-  border-bottom-left-radius: 10px;
+ .mine .message.last:after {
+     content: "";
+     position: absolute;
+     z-index: 1;
+     bottom: 0;
+     right: -10px;
+     width: 10px;
+     height: 20px;
+     background: white;
+     border-bottom-left-radius: 10px;
 }
-
-#page-container {
-  position: relative;
-  min-height: 100vh;
+ #page-container {
+     position: relative;
+     min-height: 100vh;
 }
-
-#content-wrap {
-  padding-bottom: 5.5rem;    /* Footer height */
+ #content-wrap {
+     padding-bottom: 5.5rem;
+    /* Footer height */
 }
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 5.5rem;            /* Footer height */
+ #footer {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     height: 5.5rem;
+    /* Footer height */
 }
-
-table.TeachingExp {
-  width: 100%;
-  border-collapse: collapse;
-  margin:0 auto;
+ table.TeachingExp {
+     width: 100%;
+     border-collapse: collapse;
+     margin:0 auto;
 }
-table.TeachingExp td, table.TeachingExp th {
-  padding: 3px 2px;
+ table.TeachingExp td, table.TeachingExp th {
+     padding: 3px 2px;
 }
-    }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>$(function () {
