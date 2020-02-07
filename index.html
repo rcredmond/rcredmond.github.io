@@ -53,9 +53,10 @@
      background-color: #009688;
      color: #fff;
 }
- div.tab button.active {
+ tab button.active {
      background-color: #009688;
      color: #fff;
+
 }
  .links {
      color: #009688 
@@ -172,35 +173,22 @@
      padding: 3px 2px;
 }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
-    $(function() {
-        $("#Home").css("display", "block");
-        $("div.tab button:first-child").addClass(" active");
-        $(".content").click(function() {
-            $(this).animate({
-                opacity: "0"
-            }, 200);
-            var links = document.getElementsByClassName("links");
-            for (i = 0; i < links.length; i++) {
-                links[i].className = links[i].className.replace(" active", "");
-            }
-        });
-    });
+function openLang(evt, langName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(langName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 
-    function openLang(e, lang) {
-        var links = document.getElementsByClassName("links");
-        var content = document.getElementsByClassName("content");
-        for (i = 0; i < content.length; i++) {
-            content[i].style.display = "none";
-        }
-        for (i = 0; i < links.length; i++) {
-            links[i].className = links[i].className.replace(" active", "");
-        }
-        document.getElementById(lang).style.display = "block";
-        document.getElementById(lang).style.opacity = "1";
-        e.currentTarget.className += " active";
-    }
+document.getElementById("defaultOpen").click();
 </script>
 
 <body class="w3-light-grey" onLoad="openLang(event,'Home')">
@@ -251,21 +239,21 @@ Ryan Redmond<rt>ライアン・レッドモンド</rt>
                         <div class="w3-container w3-card w3-white w3-margin-bottom">
 
                             <div class="tab"><b>
-  <button class="links" onclick="openLang(event,'Home')">Home</button>
-  <button class="links" onclick="openLang(event,'Teaching')">Teaching</button>
-  <button class="links" onclick="openLang(event,'Research')">Research</button>
-  <button class="links" onclick="openLang(event,'CV')">CV</button>
-  <button class="links" onclick="openLang(event,'Personal')">Personal</button>
-  <button class="links" onclick="openLang(event,'Japanese')">日本語</button>
+  <button class="tablinks" onclick="openLang(event,'Home')">Home</button>
+  <button class="tablinks" onclick="openLang(event,'Teaching')">Teaching</button>
+  <button class="tablinks" onclick="openLang(event,'Research')">Research</button>
+  <button class="tablinks" onclick="openLang(event,'CV')">CV</button>
+  <button class="tablinks" onclick="openLang(event,'Personal')">Personal</button>
+  <button class="tablinks" onclick="openLang(event,'Japanese')">日本語</button>
 </b>
                             </div>
 
-                            <div id="Home" class="content">
+                            <div id="Home" class="tabcontent">
                                 <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
                                 <p class="p_wrap">Hello! I am a doctoral candidate specializing in Japanese sociolinguistics in the Department of Linguistics at the University of California, Davis. From 2018-2019, I was a JSPS Doctoral Fellow at Waseda University, finishing my dissertation fieldwork. My doctoral thesis is concerned with Japanese underground idol (地下アイドル), and the linguistic landscapes that surround their performances, contracts, and relationships. </p>
                             </div>
 
-                            <div id="Teaching" class="content">
+                            <div id="Teaching" class="tabcontent">
                                 <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
                                 <p class="p_wrap"> My teaching philosophy for language hinges on the notion that the ideal learning environment is one in which learners are empowered to make meaning in the target language in the classroom, which is a key feature of the Communicative Language Teaching (CLT) approach. However, whether teaching language, culture, or linguistics, I believe that a truly well-constructed lesson caters to the individualized needs of the students, and that these needs change at the macro level (year-to-year with new cohorts) as well as on the micro level (day-to-day within the same classroom). Lessons also need to be maintained as new research is published in our field daily. When developing a new lesson, the needs of my students are always my first priority, as individual variation is not just something we measure as social scientists, but it is something we see in the way that our students learn. I take this diversity very seriously as it has been integral to my life thus far, and continues to play an important role in how I shape myself as a person and educator.
                                     <br>
@@ -322,7 +310,7 @@ Ryan Redmond<rt>ライアン・レッドモンド</rt>
 
                             </div>
 
-                            <div id="Research" class="content">
+                            <div id="Research" class="tabcontent">
                                 <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
                                 <p style="padding-top:30px; padding-right:50px; padding-left:50px; line-height:1.65;">My research stretches across multiple disciplines, including linguistics, language pedagogy, anthropology, and critical gender studies. However, the common thread in my research is that it usually has something to do with modern Japanese popular culture. I believe that teaching and research should complement and work to inform each other, and that those who teach culture and language best are those that have experienced it first-hand. We know that Japanese language students are consuming anime and manga at a higher and higher rate, and that for many, this time they spend with these media dwarfs the amount of time they get to experience the language in class. I believe that having a teacher who is aware of these popular trends, and also analyzes them from an objective, empirical viewpoint can only better help the students contextualize the material. You can view my past publications and selected presentations at my <a href src="https://ucdavis.academia.edu/RyanRedmond">Academia.edu</a> page.
                                     <p>
@@ -387,18 +375,18 @@ Ryan Redmond<rt>ライアン・レッドモンド</rt>
                                         <br>
                             </div>
 
-                            <div id="CV" class="content">
+                            <div id="CV" class="tabcontent">
                                 <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
                                 <p class="p_wrap">Link to my CV here.</p>
                             </div>
 
-                            <div id="Japanese" class="content">
+                            <div id="Japanese" class="tabcontent">
                                 <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
                                 <p class="p_wrap">ライアン・レッドモンドと申します。CV等を日本語でも提供できます。</p>
 
                             </div>
 
-                            <div id="Personal" class="content">
+                            <div id="Personal" class="tabcontent">
                                 <p style="text-align:center"><img src="https://mynewsla.com/wp-content/themes/fearless/images/missing-image-232x150.png" style="width:50%;" alt="Missing"></p>
                                 <p class="p_wrap">I am an unabashed fan of the media that I research. I think one would be hard-pressed to find an L2 Japanese-speaking 20-something American these days who didn't get their curiosity started with Saturday-morning Pokémon, or late-night viewings of Inuyasha. However, I am also not blind to the problematic nature of many of these media. One such genre tha I study, BL (a term itself problematic enough), has evolved since the days of the <i>yaoi ronsо̄</i>, but it still has a long way to go. Even the idol industry that I spent a year working in for my fieldwork is often exploitative and heterosexist. I recognize these shortcomings, and yet I am still inclined to view myself (to borrow the term popularized by Matt Hills and Henry Jenkins) as an 'aca-fan'.</p>
 
